@@ -792,6 +792,7 @@ $('#admin-logout').addEventListener('click', async () => {
   button.disabled = true;
 
   try {
+    if (window.sentraAdminPushDisable) await window.sentraAdminPushDisable();
     await api('logout', {});
     showLogin('You have signed out of company admin.');
     location.hash = 'overview';
