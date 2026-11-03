@@ -1,0 +1,13 @@
+Dashboard: npm ci completed; npm run build PASSED (Next.js 16.4.3).
+Focused checks PASSED:
+- scheduler secret/method/config validation and bounded batch
+- production Drive ENV mode skips obsolete local token-file path
+- Drive range header forwarding (mock transport)
+- Reset state/history/count, stale responses, polling suppression and notification event preservation
+- invitation-delete route authentication/UUID validation, busy/missing/success cases
+- custom-dialog accept/cancel/focus/text handling
+Live SQL/provider/Windows/Android tests not performed.
+The supplied push test had a pre-ownership fixture without linked event/source ownership. Updated the test fixture to match the existing ownership contract and added a different-owner suppression assertion. Production ownership checks remain enforced.
+
+Admin: independent npm ci and npm run build PASSED (Next.js 16.4.3).
+Dashboard npm test PASSED: push transport/service-worker mocks, ownership suppression, migration/auth/isolation checks.
