@@ -9,10 +9,10 @@
  async function disable(){if(!supported())return;const s=await subscription();if(s){await request('unsubscribe',{endpoint:s.endpoint});await s.unsubscribe();}}
  window.sentraAdminPushDisable=disable;
  function mount(){
-  const target=document.querySelector('#admin-refresh');if(!target)return;
-  const panel=document.createElement('section');panel.style.cssText='padding:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center';
-  panel.innerHTML='<button type="button" data-push="enable">Enable notifications</button><button type="button" data-push="test">Test notification</button><button type="button" data-push="disable">Disable notifications</button><span id="admin-push-status" role="status">Admin notifications: enable on this device.</span>';
-  target.parentElement.append(panel);
+  const target=document.querySelector('#admin-notification-settings');if(!target)return;
+  const panel=document.createElement('div');panel.className='push-settings-controls';
+  panel.innerHTML='<div class="push-settings-actions"><button type="button" class="button button-primary" data-push="enable">Enable notifications</button><button type="button" class="button button-secondary" data-push="test">Send test</button><button type="button" class="button button-quiet" data-push="disable">Turn off</button></div><span id="admin-push-status" class="push-status" role="status">Notifications are not enabled on this device yet.</span>';
+  target.append(panel);
   panel.addEventListener('click',async e=>{
    const action=e.target.dataset.push;if(!action||busy)return;busy=true;panel.querySelectorAll('button').forEach(b=>b.disabled=true);
    try{
