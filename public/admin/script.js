@@ -73,6 +73,11 @@ const pageDetails = {
     title: 'Recording library',
     eyebrow: 'PROCESSING & STORAGE',
     description: 'Review saved recordings and their processing and upload statuses.'
+  },
+  settings: {
+    title: 'Settings',
+    eyebrow: 'ADMIN PREFERENCES',
+    description: 'Manage browser notifications and learn about the SENTRA workspace.'
   }
 };
 
